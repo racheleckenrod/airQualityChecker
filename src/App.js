@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
+
 function App() {
+
+
+  const getAirQuality = async(city) => {
+    try {
+      const response = await fetch(`https://api.waqi.info/feed/${city}/?token=${process.env.REACT_APP_AQI_API_TOKEN}`)
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      console.error("network error", error)
+      // set error state
+      // set air quality data to null
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1>Hello World</h1>
   );
 }
 
