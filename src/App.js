@@ -25,7 +25,7 @@ const [error, setError] = useState(null);
       }
     } catch (error) {
       console.error("network error", error);
-      setError('Something went wrong');
+      setError('Something went really wrong');
       setAirQualityData(null);
       // set error state
       // set air quality data to null
